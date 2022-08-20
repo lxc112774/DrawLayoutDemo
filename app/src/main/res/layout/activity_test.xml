@@ -1,0 +1,52 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/v4_drawerlayout"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".TestActivity"
+    android:layout_height="match_parent">
+    <!--这里一定要添加，否则状态栏颜色达不到你要的效果-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_top">
+            <ImageView
+                android:id="@+id/left_menu"
+                android:layout_width="@dimen/main_head_img"
+                android:layout_height="@dimen/main_head_img"
+                android:src="@drawable/img_menu1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/see_history"
+                    android:layout_width="@dimen/main_head_img"
+                    android:layout_height="@dimen/main_head_img"
+                    android:src="@drawable/img_menu3"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/main_name_margin_right" />
+
+                <ImageView
+                    android:layout_width="@dimen/main_head_img"
+                    android:layout_height="@dimen/main_head_img"
+                    android:src="@drawable/img_menu2"
+                    android:layout_toLeftOf="@+id/see_history"
+                    android:layout_marginRight="@dimen/main_name_margin_right"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--会默认让第一个孩子作为主界面,第二个孩子变成菜单（要写layout_gravity）-->
+    <include layout="@layout/left_menu"></include>
+
+
+</android.support.v4.widget.DrawerLayout>
